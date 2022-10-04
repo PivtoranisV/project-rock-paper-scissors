@@ -13,9 +13,6 @@ function getUserChoice() {
   return userSelection.toLowerCase();
 }
 
-const playerSelection = getUserChoice();
-const computerSelection = getComputerChoice();
-
 function playRound(playerSelection, computerSelection) {
   let playerScore = 0;
   let computerScore = 0;
@@ -41,6 +38,17 @@ function playRound(playerSelection, computerSelection) {
     console.log(`Tie, you both choose ${playerSelection}`);
   }
   return `Your score is ${playerScore} and computer score is ${computerScore}`;
+
+  //return computer win else player win
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = getUserChoice();
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+  }
+}
+
+console.log(game());
+//console.log(playRound(playerSelection, computerSelection));
