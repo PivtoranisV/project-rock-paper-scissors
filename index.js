@@ -1,11 +1,14 @@
+// global variable declaration
 const option = ["paper", "scissors", "rock"];
 let winner;
 
+// function to get Computer choice
 function getComputerChoice() {
   const randomIndex = Math.floor(Math.random() * 3);
   return option[randomIndex];
 }
 
+// function to get player choice
 function getUserChoice() {
   const userSelection = prompt(
     "What is your choice? Paper, Scissors or Rock? "
@@ -13,6 +16,7 @@ function getUserChoice() {
   return userSelection.toLowerCase();
 }
 
+// function for one round
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "paper" && computerSelection === "scissors") {
     console.log("You lose, scissors beats paper");
@@ -38,6 +42,7 @@ function playRound(playerSelection, computerSelection) {
   return winner;
 }
 
+//function for the game with score track and winner declaration
 function game(times) {
   let playerScore = 0;
   let computerScore = 0;
