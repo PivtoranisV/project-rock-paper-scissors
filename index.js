@@ -38,10 +38,10 @@ function playRound(playerSelection, computerSelection) {
   return winner;
 }
 
-function game() {
+function game(times) {
   let playerScore = 0;
   let computerScore = 0;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < times; i++) {
     const playerSelection = getUserChoice();
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
@@ -51,7 +51,12 @@ function game() {
       computerScore++;
     }
   }
-  return `Your score is ${playerScore} and computer score is ${computerScore}`;
+  console.log(
+    `Your score is ${playerScore} and computer score is ${computerScore}`
+  );
+  return playerScore > computerScore
+    ? "Player is a Winner"
+    : "Computer is a Winner";
 }
 
-console.log(game());
+console.log(game(3));
