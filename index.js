@@ -1,4 +1,5 @@
 const option = ["paper", "scissors", "rock"];
+let winner;
 
 function getComputerChoice() {
   const randomIndex = Math.floor(Math.random() * 3);
@@ -6,49 +7,51 @@ function getComputerChoice() {
 }
 
 function getUserChoice() {
-  const userSelection = "rock";
-  //   const userSelection = prompt(
-  //     "What is your choice? Paper or Scissors or maybe Rock? "
-  //   );
+  const userSelection = prompt(
+    "What is your choice? Paper, Scissors or Rock? "
+  );
   return userSelection.toLowerCase();
 }
 
 function playRound(playerSelection, computerSelection) {
-  let playerScore = 0;
-  let computerScore = 0;
   if (playerSelection === "paper" && computerSelection === "scissors") {
-    computerScore++;
     console.log("You lose, scissors beats paper");
+    winner = "Computer";
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    playerScore++;
     console.log("You win, paper beats rock");
+    winner = "Player";
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    playerScore++;
     console.log("You win, scissors beats paper");
+    winner = "Player";
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    computerScore++;
     console.log("You lose, rock beats scissors");
+    winner = "Computer";
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    computerScore++;
     console.log("You lose, paper beats rock");
+    winner = "Computer";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    playerScore++;
     console.log("You win, rock beats scissors");
+    winner = "Player";
   } else {
     console.log(`Tie, you both choose ${playerSelection}`);
   }
-  return `Your score is ${playerScore} and computer score is ${computerScore}`;
-
-  //return computer win else player win
+  return winner;
 }
 
 function game() {
+  let playerScore = 0;
+  let computerScore = 0;
   for (let i = 0; i < 5; i++) {
     const playerSelection = getUserChoice();
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
+    if (winner === "Player") {
+      playerScore++;
+    } else if (winner === "Computer") {
+      computerScore++;
+    }
   }
+  return `Your score is ${playerScore} and computer score is ${computerScore}`;
 }
 
 console.log(game());
-//console.log(playRound(playerSelection, computerSelection));
