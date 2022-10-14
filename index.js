@@ -43,27 +43,25 @@ function playRound(playerSelection, computerSelection) {
 }
 
 //function for the game with score track and winner declaration
-function game(times) {
-  let playerScore = 0;
-  let computerScore = 0;
-  for (let i = 0; i < times; i++) {
-    const playerSelection = getUserChoice();
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    if (winner === 'Player') {
-      playerScore++;
-    } else if (winner === 'Computer') {
-      computerScore++;
-    }
-  }
-  console.log(
-    `Your score is ${playerScore} and computer score is ${computerScore}`
-  );
-  return playerScore > computerScore
-    ? 'Player is a Winner'
-    : 'Computer is a Winner';
-}
+// function game(times) {
+//   let playerScore = 0;
+//   let computerScore = 0;
+//   for (let i = 0; i < times; i++) {
+//     const playerSelection = getUserChoice();
+//     const computerSelection = getComputerChoice();
+//     playRound(playerSelection, computerSelection);
+//     if (winner === 'Player') {
+//       playerScore++;
+//     } else if (winner === 'Computer') {
+//       computerScore++;
+//     }
+//   }
+//   console.log(
+//     `Your score is ${playerScore} and computer score is ${computerScore}`
+//   );
+//   return playerScore > computerScore
+//     ? 'Player is a Winner'
+//     : 'Computer is a Winner';
+// }
 
-console.log(game(3));
-
-//test
+//console.log(game(3));
