@@ -5,3 +5,19 @@
   margin: 0;
   font-family: 'Special Elite', cursive;
 }
+
+body {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.new-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
