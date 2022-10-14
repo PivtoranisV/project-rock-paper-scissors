@@ -16,6 +16,12 @@ body {
   background-color: rgba(251, 251, 226, 0.612);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .new-game {
   display: flex;
   flex-direction: column;
@@ -23,7 +29,7 @@ body {
   gap: 80px;
 }
 
-.new-game__header {
+.game-header {
   font-size: 4rem;
   text-align: center;
   text-transform: uppercase;
@@ -44,4 +50,25 @@ body {
 .new-game__btn:hover {
   color: blue;
   background-color: yellow;
+}
+
+.weapons {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.weapons button {
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  background-color: rgb(196, 210, 185);
+  color: rgb(128, 59, 59);
+  font-size: 1.5rem;
+}
+
+.weapons button:hover {
+  background-color: rgb(134, 199, 85);
+  color: rgb(206, 53, 53);
 }
