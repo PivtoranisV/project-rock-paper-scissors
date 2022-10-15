@@ -73,7 +73,8 @@ main {
   color: rgb(206, 53, 53);
 }
 
-.choice {
+.choice,
+.score {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -82,12 +83,16 @@ main {
 }
 
 .player__choice-container,
-.computer__choice-container {
+.computer__choice-container,
+.player__score-container,
+.computer__score-container {
   border: 2px solid black;
   border-radius: 8px;
   padding: 10px;
   width: 130px;
   flex: 0 0 auto;
+  min-height: 90px;
+  background-color: white;
 }
 
 h3 {
@@ -96,6 +101,7 @@ h3 {
   -webkit-text-fill-color: transparent;
   font-size: 1.4rem;
 }
+
 .special-divider {
   border: none;
   background-color: rgb(128, 59, 59);
@@ -106,4 +112,8 @@ h3 {
 
 .round-result {
   color: rgb(128, 59, 59);
+}
+
+.score {
+  margin-top: 20px;
 }
