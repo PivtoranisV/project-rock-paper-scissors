@@ -76,7 +76,9 @@ main {
 .choice {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   text-align: center;
+  gap: 3px;
 }
 
 .player__choice-container,
@@ -85,6 +87,7 @@ main {
   border-radius: 8px;
   padding: 10px;
   width: 130px;
+  flex: 0 0 auto;
 }
 
 h3 {
@@ -99,4 +102,8 @@ h3 {
   height: 2px;
   width: 50%;
   margin: 12px auto;
+}
+
+.round-result {
+  color: rgb(128, 59, 59);
 }
