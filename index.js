@@ -1,3 +1,11 @@
+const startGameBtn = document.querySelector('.new-game__btn');
+const startGameWindow = document.querySelector('.new-game');
+const gameWindow = document.querySelector('.game');
+
+startGameBtn.addEventListener('click', () => {
+  startGameWindow.classList.add('hide');
+  gameWindow.classList.remove('hide');
+});
 // global variable declaration
 const option = ['paper', 'scissors', 'rock'];
 let winner;
