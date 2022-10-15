@@ -10,17 +10,18 @@
 
   <body>
     <main>
-      <div class="new-game">
+      <div class="new-game hide">
         <h1 class="game-header">Rock-Paper-Scissors</h1>
         <button class="new-game__btn" type="button">New Game</button>
       </div>
       <div class="game">
-        <h1 class="game-header">Choose your weapon</h1>
+        <h2 class="game-header">Choose your weapon</h2>
         <div class="weapons">
           <button class="rock" type="button">Rock</button>
           <button class="paper" type="button">Paper</button>
           <button class="scissors" type="button">Scissors</button>
         </div>
+        <h2 class="game-header">Game results</h2>
         <div class="choice">
           <div class="player__choice-container">
             <h3>Your Weapon</h3>
@@ -52,12 +53,16 @@
           </div>
         </div>
       </div>
-      <div class="result">
+      <div class="result hide">
         <h1 class="game-header"></h1>
         <button class="new-game__btn" type="button">New Game</button>
       </div>
     </main>
-
+    <footer class="attribution">
+      <div class="special-divider"></div>
+      Coded by
+      <a href="https://github.com/PivtoranisV">Volodymyr Pivtoranis.</a>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
