@@ -1,51 +1,58 @@
+let winner;
 const startGameBtn = document.querySelector('.new-game__btn');
 const startGameWindow = document.querySelector('.new-game');
 const gameWindow = document.querySelector('.game');
+const weaponButtons = document.querySelectorAll('.weapon');
+const displayPlayerChoice = document.querySelector('.player__choice');
+const displayComputerChoice = document.querySelector('.computer__choice');
+const displayRoundResult = document.querySelector('.round-result');
+let playerSelection;
+let computerSelection;
 
 startGameBtn.addEventListener('click', () => {
   startGameWindow.classList.add('hide');
   gameWindow.classList.remove('hide');
 });
-// global variable declaration
-const option = ['paper', 'scissors', 'rock'];
-let winner;
 
-// function to get Computer choice
 function getComputerChoice() {
+  const option = ['Paper', 'Scissors', 'Rock'];
   const randomIndex = Math.floor(Math.random() * 3);
-  return option[randomIndex];
+  displayComputerChoice.textContent = option[randomIndex];
+  computerSelection = displayComputerChoice.textContent;
+  return computerSelection;
 }
 
-// function to get player choice
-function getUserChoice() {
-  const userSelection = prompt(
-    'What is your choice? Paper, Scissors or Rock? '
-  );
-  return userSelection.toLowerCase();
-}
+weaponButtons.forEach((weaponButton) =>
+  weaponButton.addEventListener('click', playRound)
+);
 
 // function for one round
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    console.log('You lose, scissors beats paper');
+function playRound(playerSelection) {
+  getComputerChoice();
+  displayPlayerChoice.textContent = playerSelection.target.value;
+  playerSelection = displayPlayerChoice.textContent;
+  console.log(playerSelection);
+  console.log(computerSelection);
+  if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+    displayRoundResult.textContent = 'You lose, scissors beats paper';
     winner = 'Computer';
-  } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    console.log('You win, paper beats rock');
+  } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+    displayRoundResult.textContent = 'You win, paper beats rock';
     winner = 'Player';
-  } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    console.log('You win, scissors beats paper');
+  } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+    displayRoundResult.textContent = 'You win, scissors beats paper';
     winner = 'Player';
-  } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    console.log('You lose, rock beats scissors');
+  } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+    displayRoundResult.textContent = 'You lose, rock beats scissors';
     winner = 'Computer';
-  } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-    console.log('You lose, paper beats rock');
+  } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+    displayRoundResult.textContent = 'You lose, paper beats rock';
     winner = 'Computer';
-  } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    console.log('You win, rock beats scissors');
+  } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+    displayRoundResult.textContent = 'You win, rock beats scissors';
     winner = 'Player';
   } else {
-    console.log(`Tie, you both choose ${playerSelection}`);
+    displayRoundResult.textContent = `Tie, you both choose ${playerSelection}`;
   }
   return winner;
 }
