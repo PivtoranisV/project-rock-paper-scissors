@@ -131,6 +131,13 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
 .hide {
   display: none;
 }
