@@ -93,7 +93,7 @@ main {
   width: 130px;
   flex: 0 0 auto;
   min-height: 90px;
-  background-color: white;
+  background-color: rgb(252, 248, 248);
 }
 
 h3 {
@@ -111,8 +111,21 @@ h3 {
   margin: 12px auto;
 }
 
+.player__choice,
+.computer__choice,
+.player__score,
+.computer__score {
+  color: rgb(134, 199, 85);
+  font-size: 1.8rem;
+}
+
 .round-result {
-  color: rgb(128, 59, 59);
+  color: rgb(206, 53, 53);
+  min-height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
 }
 
 .score {
