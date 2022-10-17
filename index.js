@@ -1,4 +1,3 @@
-let winner;
 const startGameBtn = document.querySelector('.new-game__btn');
 const startGameWindow = document.querySelector('.new-game');
 const gameWindow = document.querySelector('.game');
