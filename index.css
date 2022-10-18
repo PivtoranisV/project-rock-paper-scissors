@@ -46,6 +46,7 @@ main {
   border-radius: 8px;
   color: yellow;
   background-color: blue;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .new-game__btn:hover {
@@ -67,6 +68,7 @@ main {
   background-color: rgb(196, 210, 185);
   color: rgb(128, 59, 59);
   font-size: 1.5rem;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .weapons button:hover {
@@ -94,6 +96,7 @@ main {
   flex: 0 0 auto;
   min-height: 90px;
   background-color: rgb(252, 248, 248);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 h3 {
